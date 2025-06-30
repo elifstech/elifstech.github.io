@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elif Kömürcü</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">Elif K.</a>
+    <nav>
+      <a href="#" class="active">Anasayfa</a>
+      <a href="#projeler">Projeler</a>
+      <a href="spell-spaceship/index.html" class="btn" target="_blank">Oyunu Oyna</a>
+    </nav>
+  </header>
+
+  <!-- Ana Alan -->
+  <section class="home">
+    <div class="home-content">
+      <h1>Merhaba ben <span>Elif Kömürcü,</span></h1>
+      <h3 class="typing-text"><span></span></h3>
+      
+      <p>
+        Kapadokya Üniversitesi'nde Yazılım Geliştirme öğrencisiyim. Aynı zamanda üniversitemde yarı zamanlı grafik tasarımcı olarak çalışıyor, kendi çizimlerimden ilhamla oyunlar geliştiriyorum.<br>
+        Unity ile oyun yapıyor, Photoshop ve Blender ile dijital sanat ve animasyonlar üretiyorum. Çizim yapmak, hayal ettiklerimi hareketlendirmek ve kodla yeni dünyalar yaratmak benim için büyük bir tutku.<br>
+        Boş zamanlarımda piyano çalıyor, sanatı yazılımla buluşturduğum projeler geliştiriyorum. Tasarım, teknoloji ve hayal gücünün kesiştiği her şeyin peşindeyim. Ayrıca geliştirdiğim projeler için projeler kısmını mutlaka inceleyin.
+      </p>
+
+      <p style="margin-top: 1.5rem;">
+        💌 İş birliği için sosyal medya üzerinden veya <a href="mailto:elif.komurcu@kun.edu.tr" style="color: var(--accent); text-decoration: underline;">elif.komurcu@kun.edu.tr</a> adresinden bana ulaşabilirsiniz.
+      </p>
+
+      <div class="social-icons">
+        <a href="https://www.instagram.com/elifstudytech/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/elif-k%C3%B6m%C3%BCrc%C3%BC-b407b628a/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/elifstudytech" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <a href="https://codepen.io/elifstudytech" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-codepen"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projeler -->
+  <section class="projects" id="projeler">
+    <div class="project-container">
+
+            <div class="project-logo">
+    <img src="images/logo.png" alt="Spell & Spaceship Logo">
+    </div>
+      <h2>Spell & Spaceship</h2>
+      <p>
+        Bir uzay ve İngilizce kelime oyunu olan <strong>Spell & Spaceship</strong>, eğitim amaçlı geliştirdiğim ilk oyunum. Oyundaki tüm grafik, karakter ve arayüz tasarımları bana ait. Unity ile geliştirdiğim bu oyunda hem öğrenmeyi hem eğlenmeyi hedefledim.
+      </p>
+
+      <div class="project-images">
+        <img src="images/spell1.png" alt="Spell & Spaceship ekran görüntüsü">
+        <img src="images/spell2.png" alt="Spell & Spaceship oyun içi">
+      </div>
+
+    
+      <a href="spell-spaceship/index.html" class="btn" target="_blank">Oyunu Oyna</a>
+
+    </div>
+  </section>
+
+  <!-- Dağlar Arkaplan -->
+  <div class="mountain-bg"></div>
+
+  <!-- Genişleyen Görsel Modalı -->
+<div id="imgModal" class="img-modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgZoomed">
+</div>
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("imgZoomed");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".project-images img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
+
+
+</body>
+</html>
