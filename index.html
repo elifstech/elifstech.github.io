@@ -1,298 +1,214 @@
-<!--Elif Kömürcü - 2025-->
-<!--Yazılım Geliştirme - 24118027-->
-<!--Kişisel Websitesi-->
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elif K - Dijital Sanatçı & Geliştirici</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elif K | Dijital Zanaatkar</title> <!--Başlık kısmı-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--Font Awesome ikon kütüphanesi-->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet"><!--Google Fonts bağlantısı-->
+    <link rel="stylesheet" href="style.css"> <!--CSS dosyasına bağladığım kısım-->
 </head>
 <body>
-  <!-- arkaplan burada -->
-  <div class="luxury-background"></div>
-  
-  <!-- Dekoratif Elementler -->
-  <div class="decorative-elements">
-    <div class="ornament top-left"></div>
-    <div class="ornament top-right"></div>
-    <div class="ornament bottom-left"></div>
-    <div class="ornament bottom-right"></div>
-  </div>
-
-  <!-- Ana İçerik -->
-  <main class="luxury-portfolio">
-    <!-- Hero Section -->
-    <section id="hero" class="luxury-hero">
-      <div class="hero-content">
-        <!-- Sol Taraf - İsim ve Sosyal Medya -->
-        <div class="name-display">
-          <!-- Profil Circle -->
-          <div class="profile-circle">
-            <div class="circle-outer">
-              <div class="circle-middle">
-                <div class="circle-inner">
-                  <img src="Assets/images/your-profile-image.jpeg" alt="Elif K" class="profile-image"> <!--Profil resmi burada-->
-                  <div class="profile-overlay">
-                    <i class="fas fa-feather-alt"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- İsim ve Başlık -->
-          <div class="name-border">
-            <h1 class="elegant-title">Elif K.</h1>
-          </div>
-          <div class="title-divider">
-            <div class="divider-line"></div>
-            <div class="divider-diamond"></div>
-            <div class="divider-line"></div>
-          </div>
-          <p class="elegant-subtitle">Dijital Sanatçı & Yazılım Geliştirici</p>
-          
-          <!-- Sosyal Medya ve Linkler -->
-          <div class="social-links-main">
-            <a href="https://www.instagram.com/elifstech/" class="social-link-main" target="_blank">
-              <i class="fab fa-instagram"></i>
-              <span>Instagram</span>
-            </a>
-            <a href="https://github.com/elifstech" class="social-link-main" target="_blank">
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/elif-k%C3%B6m%C3%BCrc%C3%BC-b407b628a/" class="social-link-main" target="_blank">
-              <i class="fab fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://elifstech.github.io/stepomodoro/" class="social-link-main" target="_blank">
-              <i class="fas fa-hourglass-half"></i>
-              <span>Stepomodoro</span>
-            </a>
-            <a href="mailto:elif.komurcu@kun.edu.tr" class="social-link-main">
-              <i class="fas fa-envelope"></i>
-              <span>E-posta</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Sağ Taraf - Bilgi Kartları -->
-        <div class="hero-info">
-          <div class="info-card">
-            <div class="card-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="card-content">
-              <h3>Yazılım Geliştirme</h3>
-              <p>Kapadokya Üniversitesi'nde öğrenci ve yazılım geliştirici</p>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="card-icon">
-              <i class="fas fa-palette"></i>
-            </div>
-            <div class="card-content">
-              <h3>Dijital Sanat</h3>
-              <p>Photoshop & Blender ile görsel hikayeler</p>
-            </div>
-          </div>
-
-          <div class="info-card">
-            <div class="card-icon">
-              <i class="fas fa-gamepad"></i>
-            </div>
-            <div class="card-content">
-              <h3>Oyun Tasarımı</h3>
-              <p>Unity ile interaktif deneyimler</p>
-            </div>
-          </div>
-
-          <!-- Müzik Kutusu -->
-          <div class="music-box">
-            <div class="music-header">
-              <i class="fas fa-music"></i>
-              <span>Ortaçağ Melodileri</span>
-            </div>
-            <div class="music-controls">
-              <button class="music-btn" id="playPause">
-                <i class="fas fa-play"></i>
-              </button>
-              <div class="music-info">
-                <div class="music-title">Ortaçağ Melodisi</div>
-                <div class="music-time">0:00 / 0:00</div>
-              </div>
-              <button class="music-btn" id="nextTrack">
-                <i class="fas fa-forward"></i>
-              </button>
-            </div>
-            <div class="volume-control">
-              <i class="fas fa-volume-down"></i>
-              <input type="range" id="volumeSlider" min="0" max="100" value="50">
-              <i class="fas fa-volume-up"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="luxury-scroll">
-        <div class="scroll-text">Keşfet</div>
-        <div class="scroll-arrow">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="luxury-projects">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Projelerim</h2>
-          <div class="title-underline"></div>
-        </div>
-
-        <div class="projects-showcase">
-          <!-- Featured Project -->
-          <div class="project-featured">
-            <div class="project-visual">
-              <div class="project-frame">
-                <img src="Assets/images/spell1.png" alt="Spell & Spaceship" class="project-image">
-                <div class="image-overlay">
-                  <i class="fas fa-play"></i>
-                </div>
-              </div>
-            </div>
-            <div class="project-details">
-              <h3>Spell & Spaceship</h3>
-              <p>Kendi çizimlerimden ilham alarak Unity'de geliştirdiğim eğlenceli uzay macerası. Kolay oyun mekanikleri ve görsel tasarım.</p>
-              <div class="project-meta">
-                <span class="meta-tag">Unity</span>
-                <span class="meta-tag">C#</span>
-                <span class="meta-tag">2D Game</span>
-                <span class="meta-tag">Pixel Art</span>
-              </div>
-              <a href="spell-spaceship/index.html" class="luxury-btn" target="_blank">
-                <span>Oyunu Oyna</span>
-                <i class="fas fa-play"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Mini Projects Grid -->
-          <div class="projects-grid">
-            <div class="project-mini">
-              <div class="mini-visual">
-                <img src="Assets/images/stepomodoro.png" alt="Stepomodoro" class="mini-image">
-                <div class="mini-overlay">
-                  <i class="fas fa-hourglass-half"></i>
-                </div>
-              </div>
-              <div class="mini-content">
-                <h4>Stepomodoro</h4>
-                <p>Zaman yönetimi ve productivity uygulaması</p>
-                <div class="mini-meta">
-                  <span class="mini-tag">JavaScript</span>
-                  <span class="mini-tag">CSS</span>
-                </div>
-                <a href="https://elifstech.github.io/stepomodoro/" class="mini-link" target="_blank">
-                  Kullan <i class="fas fa-external-link-alt"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="luxury-about">
-      <div class="container">
-        <div class="about-elegant">
-          <div class="about-content">
-            <div class="about-header">
-              <h2 class="section-title">Yolculuğum</h2>
-              <div class="title-underline"></div>
-            </div>
-            
-            <div class="about-text">
-              <p>Kapadokya Üniversitesi'nde Yazılım Geliştirme öğrencisiyim. Hem teknik hem de sanatsal becerilerimi birleştirerek dijital dünyalarda yeni deneyimler yaratıyorum.</p>
-              
-              <p>Unity ile oyun geliştirme, Photoshop ve Blender ile dijital sanat benim için sadece birer araç değil, hayal gücümü somutlaştırma yolları. Her projemde teknik mükemmellik ve sanatsal ifadeyi bir araya getirmeye çalışıyorum.</p>
-              
-              <p>Boş zamanlarımda piyano çalarak müziğin ritmini, kod yazarak mantığın dansını keşfediyorum. Tasarım, teknoloji ve sanatın kesişiminde sürekli yeni ufuklar arıyorum.</p>
-            </div>
-
-            <div class="skills-elegant">
-              <div class="skill-category">
-                <h4>Teknik Beceriler</h4>
-                <div class="skill-tags">
-                  <span class="skill-tag">Unity</span>
-                  <span class="skill-tag">C#</span>
-                  <span class="skill-tag">JavaScript</span>
-                  <span class="skill-tag">HTML/CSS</span>
-                  
-                </div>
-              </div>
-              
-              <div class="skill-category">
-                <h4>Sanatsal Beceriler</h4>
-                <div class="skill-tags">
-                  <span class="skill-tag">Photoshop</span>
-                  <span class="skill-tag">Blender</span>
-                  <span class="skill-tag">Digital Art</span>
-                  <span class="skill-tag">UI/UX</span>
-                  <span class="skill-tag">3D Modeling</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-elegant">
-            <div class="contact-card">
-              <h3>İletişim</h3>
-              <div class="contact-links">
-                <a href="mailto:elif.komurcu@kun.edu.tr" class="contact-link">
-                  <i class="fas fa-envelope"></i>
-                  <span>elif.komurcu@kun.edu.tr</span>
-                </a>
-                <a href="https://www.instagram.com/elifstech/" class="contact-link" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                  <span>@elifstech</span>
-                </a>
-                <a href="https://github.com/elifstech" class="contact-link" target="_blank">
-                  <i class="fab fa-github"></i>
-                  <span>github.com/elifstech</span>
-                </a>
-                <a href="https://www.linkedin.com/in/elif-k%C3%B6m%C3%BCrc%C3%BC-b407b628a/" class="contact-link" target="_blank">
-                  <i class="fab fa-linkedin"></i>
-                  <span>LinkedIn</span>
-                </a>
-                <a href="https://elifstech.github.io/stepomodoro/" class="contact-link" target="_blank">
-                  <i class="fas fa-hourglass-half"></i>
-                  <span>Stepomodoro</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="luxury-footer">
-    <div class="container">
-      <p>&copy; 2025 Elif Komurcu. Tüm hakları saklıdır.</p>
+    <!--Yıldız parçaçıkları için-->
+    <div class="star-field">
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        <div class="star star-5"></div>
     </div>
-  </footer>
 
-  <script src="main.js"></script>
+    <!--üst menü-->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="https://elifstech.github.io/" target="_blank" class="logo">Elif<span class="highlight">.</span></a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Başlangıç</a></li>
+                    <li><a href="#about" class="nav-link">Hikaye</a></li>
+                    <li><a href="#skills" class="nav-link">Envanter</a></li>
+                    <li><a href="#projects" class="nav-link">Eserler</a></li>
+                    <li><a href="https://www.instagram.com/elifstech/" target="_blank" btn btn-mystic">İletişim Kur</a></li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+<!--Profil kısmı-->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content fade-in-up">
+                <span class="greeting">Hoş Geldin, Gezgin</span>
+                <h1 class="hero-title">Kodun ve Sanatın <br> <span class="italic-text">Kesiştiği Diyar</span></h1>
+                <p class="hero-description">
+                    Merhaba ben Elif, Kapadokya Üniversitesi'nde 'Yazılım Geliştirme' 2. Sınıf öğrencisiyim. Dijital dünyada minimalist ve işlevsel tasarımlar yaratmayı seviyorum. Kodun büyüsüne inanıyor ve her projede yeni bir hikaye anlatmayı hedefliyorum.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-mystic">Eserleri İncele</a>
+                    <a href="https://github.com/elifstech" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://elifstech.github.io/stepomodoro/" target="_blank" class="social-icon"><i class="fas fa-hourglass-half"></i></a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/elif-k%C3%B6m%C3%BCrc%C3%BC-b407b628a/" target="_blank" class="social-icon">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/elifstech/" target="_blank" class="social-icon">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <!-- CodePen -->
+                    <a href="https://codepen.io/elifstudytech" target="_blank" class="social-icon">
+                      <i class="fab fa-codepen"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fade-in-up delay-200">
+                <div class="image-frame">
+                    <img src="assets/images/gandalf.jpeg" alt="Elif K">
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Hakkında kısmı-->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal-text">
+                <h2 class="section-title">Hikaye</h2>
+                <div class="separator"></div>
+                <p class="section-subtitle">Yolculuğun kökenleri</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card mystic-card reveal-card">
+                    <i class="fas fa-scroll card-icon"></i>
+                    <h3>Akademi</h3>
+                    <p>Kapadokya Üniversitesi'nin kadim salonlarında, yazılımın teorik temellerini ve yazılım disiplinini öğreniyorum.</p>
+                </div>
+                <div class="about-card mystic-card reveal-card delay-100">
+                    <i class="fas fa-quidditch card-icon"></i> <h3>Vizyon</h3>
+                    <p>Sadelik en büyük karmaşıklıktır. Tasarımlarımda gürültüyü susturup, özü ortaya çıkarmayı hedefliyorum.</p>
+                </div>
+                <div class="about-card mystic-card reveal-card delay-200">
+                    <i class="fas fa-compass card-icon"></i>
+                    <h3>Fantastik Dünyalar</h3>
+<p>Gerçekliğin sınırlarını aşan hikâyeler, büyülü evrenler ve mitolojik esintiler… Yaratıcılığımı besleyen fantastik dünyaları keşfetmeyi ve bu atmosferi projelerime yansıtmayı seviyorum.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Yetenekler kısmı-->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header reveal-text">
+                <h2 class="section-title">Envanter</h2>
+                <div class="separator"></div>
+                <p class="section-subtitle">Ustalık Seviyeleri</p>
+            </div>
+            <div class="skills-wrapper mystic-card reveal-card">
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>HTML5 / CSS3</span>
+                        <span class="level">Usta</span>
+                    </div>
+                    <div class="progress-line-bg">
+                        <div class="progress-line-fill" data-target="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>JavaScript (ES6+)</span>
+                        <span class="level">Orta Seviye</span>
+                    </div>
+                    <div class="progress-line-bg">
+                        <div class="progress-line-fill" data-target="65%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>C#</span>
+                        <span class="level">Gelişiyor</span>
+                    </div>
+                    <div class="progress-line-bg">
+                        <div class="progress-line-fill" data-target="30%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Projeler kısmı-->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header reveal-text">
+                <h2 class="section-title">Seçilmiş Eserler</h2>
+                <div class="separator"></div>
+                <p class="section-subtitle">Bıraktığım İzler</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card mystic-card reveal-card">
+                    <div class="project-content">
+                        <h3>Spell & Spaceship</h3>
+                        <p class="project-desc">Kendi çizimlerimden ilham alarak Unity'de geliştirdiğim eğlenceli uzay macerası. Kolay oyun mekanikleri ve görsel tasarım.</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                        </div>
+                        <a href="https://elifstech.github.io/spell-spaceship/index.html" target="_blank" class="link-arrow">İncele <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </article>
+                <article class="project-card mystic-card reveal-card delay-200">
+                    <div class="project-content">
+                        <h3>Stepomodoro</h3>
+                        <p class="project-desc">Zaman yönetimi ve productivity uygulaması.</p>
+                        <div class="tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JAVASCRIPTS</span>
+                        </div>
+                        <a href="https://elifstech.github.io/stepomodoro/" target="_blank" class="link-arrow">İncele <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+<!--İletişim kısmı / süs amaçlı, çalışmıyor-->
+    <section id="contact" class="section">
+        <div class="container contact-wrapper reveal-card">
+            <div class="contact-box mystic-card">
+                <h2 class="section-title">Mektup Gönder</h2>
+                <p>Yeni bir ittifak kurmak veya proje fikrinizi danışmak için formu kullanın.</p>
+                
+                <form id="contact-form" class="minimal-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder="İsminiz">
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder="E-posta Adresiniz">
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="4" required placeholder="Mesajınız..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-mystic full-width">Gönder</button>
+                </form>
+
+                <div class="contact-footer">
+                    <span>elif.komurcu@kun.edu.tr</span>
+                    <span class="divider">|</span>
+                    <span>Nevşehir</span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Alt kısım-->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Elif K. <span class="faint">Minimalist Büyü.</span></p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script> <!--Javascript'e bağladığım kısım-->
 </body>
 </html>
