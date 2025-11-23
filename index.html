@@ -1,542 +1,298 @@
+<!--Elif Kömürcü - 2025-->
+<!--Yazılım Geliştirme - 24118027-->
+<!--Kişisel Websitesi-->
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elif K - Imladris</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --accent: #d4af37;
-      --accent-light: #f4e4c1;
-      --text-light: #e8dcc8;
-      --forest-green: #2d5a3d;
-      --deep-gold: #8b7355;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-family: 'Tangerine', cursive;
-      text-align: center;
-      background: 
-        radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(139, 115, 85, 0.08) 0%, transparent 50%),
-        linear-gradient(180deg, #0f1419 0%, #1a2332 50%, #132320 100%);
-      color: var(--text-light);
-      overflow: hidden;
-      position: relative;
-      background-attachment: fixed;
-    }
-
-    /* Starlight */
-    .starlight {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: #f5ede0;
-      border-radius: 50%;
-      animation: twinkle 4s infinite;
-      box-shadow: 0 0 3px var(--accent);
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-
-    /* Ethereal Lights */
-    .ethereal-light {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(80px);
-      animation: etherealGlow 8s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .ethereal-light:nth-child(1) {
-      width: 400px;
-      height: 400px;
-      top: 10%;
-      left: 10%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent);
-      animation-delay: 0s;
-    }
-
-    .ethereal-light:nth-child(2) {
-      width: 350px;
-      height: 350px;
-      bottom: 15%;
-      right: 10%;
-      background: radial-gradient(circle, rgba(139, 115, 85, 0.08), transparent);
-      animation-delay: 3s;
-    }
-
-    @keyframes etherealGlow {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
-    }
-
-    /* Leaf Particles */
-    .leaf-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .leaf {
-      position: absolute;
-      color: var(--accent);
-      font-size: 1.5rem;
-      opacity: 0.4;
-      animation: leafFall linear infinite;
-    }
-
-    @keyframes leafFall {
-      0% {
-        transform: translateY(-10px) translateX(0) rotate(0deg);
-        opacity: 0.6;
-      }
-      50% { opacity: 0.3; }
-      100% {
-        transform: translateY(100vh) translateX(100px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Clouds */
-    .cloud {
-      position: fixed;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .cloud-shape {
-      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.15), rgba(139, 115, 85, 0.08));
-      border-radius: 100px;
-      filter: blur(40px);
-      animation: cloudFloat linear infinite;
-    }
-
-    .cloud-1 {
-      width: 300px;
-      height: 80px;
-      top: 15%;
-      left: -300px;
-      animation: cloudFloat 25s linear infinite;
-    }
-
-    .cloud-2 {
-      width: 250px;
-      height: 60px;
-      top: 25%;
-      right: -250px;
-      animation: cloudFloat 30s linear infinite;
-      animation-delay: 5s;
-    }
-
-    .cloud-3 {
-      width: 280px;
-      height: 70px;
-      top: 35%;
-      left: -280px;
-      animation: cloudFloat 35s linear infinite;
-      animation-delay: 10s;
-    }
-
-    .cloud-4 {
-      width: 320px;
-      height: 85px;
-      top: 45%;
-      right: -320px;
-      animation: cloudFloat 28s linear infinite;
-      animation-delay: 8s;
-    }
-
-    @keyframes cloudFloat {
-      0% { transform: translateX(0); opacity: 0; }
-      10% { opacity: 0.4; }
-      50% { opacity: 0.5; }
-      90% { opacity: 0.3; }
-      100% { transform: translateX(calc(100vw + 100%)); opacity: 0; }
-    }
-
-    /* Realistic Mountains - SVG Style */
-    .mountains-bg {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 500px;
-      z-index: 1;
-      pointer-events: none;
-      background: 
-        url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%25" style="stop-color:rgba(45,90,61,0.4);stop-opacity:0.6" /><stop offset="100%25" style="stop-color:rgba(45,90,61,0.8);stop-opacity:0.8" /></linearGradient><filter id="shadow"><feGaussianBlur in="SourceGraphic" stdDeviation="2" /></filter></defs><path d="M 0 350 Q 150 200 300 250 T 600 200 T 900 220 L 1200 300 L 1200 500 L 0 500 Z" fill="url(%23g1)" filter="url(%23shadow)"/><path d="M -50 380 Q 100 250 250 300 T 550 280 T 850 320 L 1250 350 L 1250 500 L -50 500 Z" fill="rgba(45,90,61,0.3)"/><path d="M 0 420 Q 200 350 400 380 T 800 360 T 1200 400 L 1200 500 L 0 500 Z" fill="rgba(30,60,40,0.4)"/><circle cx="300" cy="150" r="80" fill="rgba(139,115,85,0.2)" filter="url(%23shadow)"/><circle cx="900" cy="180" r="100" fill="rgba(139,115,85,0.15)" filter="url(%23shadow)"/></svg>') no-repeat bottom center;
-      background-size: cover;
-      animation: mountainShimmer 12s ease-in-out infinite;
-    }
-
-    @keyframes mountainShimmer {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 0.85; }
-    }
-
-    /* Moria Door */
-    .moria-door {
-      position: relative;
-      width: 200px;
-      height: 280px;
-      margin: 40px 0;
-      animation: slideUp 1s ease-out 0.5s backwards;
-      perspective: 1000px;
-    }
-
-    .door-frame {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, 
-        rgba(100, 80, 60, 0.8),
-        rgba(80, 60, 40, 0.9),
-        rgba(60, 40, 20, 0.85)
-      );
-      border: 4px solid var(--deep-gold);
-      border-radius: 20px 20px 0 0;
-      box-shadow: 
-        0 0 40px rgba(212, 175, 55, 0.5),
-        inset 0 0 40px rgba(212, 175, 55, 0.15),
-        0 0 80px rgba(139, 115, 85, 0.3),
-        inset -5px -5px 20px rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      animation: doorGlow 4s ease-in-out infinite;
-    }
-
-    .door-frame::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 30% 30%, rgba(244, 228, 193, 0.2), transparent 50%);
-      animation: doorShine 3s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .door-inner {
-      position: absolute;
-      inset: 8px;
-      background: radial-gradient(ellipse at center, rgba(45, 30, 15, 0.9), rgba(20, 15, 10, 0.95));
-      border-radius: 15px 15px 0 0;
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .elvish-rune {
-      font-size: 28px;
-      color: var(--accent);
-      text-shadow: 0 0 15px var(--accent);
-      animation: runeGlow 2s ease-in-out infinite;
-    }
-
-    .rune-line {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .rune-line span:nth-child(2) {
-      font-size: 24px;
-      opacity: 0.8;
-    }
-
-    .door-symbol {
-      font-size: 50px;
-      color: var(--accent);
-      opacity: 0.7;
-      animation: symbolPulse 3s ease-in-out infinite;
-      text-shadow: 0 0 20px var(--accent);
-    }
-
-    @keyframes doorGlow {
-      0%, 100% {
-        box-shadow: 
-          0 0 40px rgba(212, 175, 55, 0.5),
-          inset 0 0 40px rgba(212, 175, 55, 0.15),
-          0 0 80px rgba(139, 115, 85, 0.3),
-          inset -5px -5px 20px rgba(0, 0, 0, 0.6);
-      }
-      50% {
-        box-shadow: 
-          0 0 60px rgba(212, 175, 55, 0.7),
-          inset 0 0 60px rgba(212, 175, 55, 0.25),
-          0 0 100px rgba(139, 115, 85, 0.4),
-          inset -5px -5px 30px rgba(0, 0, 0, 0.7);
-      }
-    }
-
-    @keyframes doorShine {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.6; }
-    }
-
-    @keyframes runeGlow {
-      0%, 100% { 
-        text-shadow: 0 0 15px var(--accent);
-        opacity: 0.7;
-      }
-      50% { 
-        text-shadow: 0 0 30px var(--accent);
-        opacity: 1;
-      }
-    }
-
-    @keyframes symbolPulse {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
-    }
-
-    .grain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.03"/%3E%3C/svg%3E');
-      opacity: 0.5;
-      pointer-events: none;
-      mix-blend-mode: overlay;
-      z-index: 9999;
-    }
-
-    .container {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeIn 2s ease-out;
-    }
-
-    h1 {
-      font-size: 60px;
-      color: var(--accent-light);
-      text-shadow: 
-        0 0 20px rgba(212, 175, 55, 0.6),
-        0 0 40px rgba(212, 175, 55, 0.3);
-      animation: elvenGlow 4s ease-in-out infinite;
-      font-family: 'Tangerine', cursive;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 24px;
-      color: var(--text-light);
-      opacity: 0.8;
-      margin-bottom: 30px;
-      font-family: 'Tangerine', cursive;
-      letter-spacing: 2px;
-      animation: slideUp 1s ease-out 0.3s backwards;
-    }
-
-    .btn {
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      background: rgba(212, 175, 55, 0.1);
-      padding: 12px 30px;
-      font-size: 20px;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      font-family: 'Tangerine', cursive;
-      letter-spacing: 2px;
-      margin-top: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-      font-weight: 700;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.3), rgba(139, 115, 85, 0.2));
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.5s, height 0.5s;
-      z-index: -1;
-    }
-
-    .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn:hover {
-      color: #0f1419;
-      box-shadow: 
-        0 0 40px rgba(212, 175, 55, 0.6),
-        0 0 60px rgba(139, 115, 85, 0.3);
-      transform: translateY(-3px);
-      border-color: var(--accent-light);
-    }
-
-    .fade-out {
-      animation: fadeOut 1s forwards;
-    }
-
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; transform: scale(1.05); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes elvenGlow {
-      0%, 100% { 
-        text-shadow: 
-          0 0 20px rgba(212, 175, 55, 0.6),
-          0 0 40px rgba(212, 175, 55, 0.3);
-      }
-      50% { 
-        text-shadow: 
-          0 0 40px rgba(212, 175, 55, 0.8),
-          0 0 60px rgba(139, 115, 85, 0.4);
-      }
-    }
-  </style>
+  <title>Elif K - Dijital Sanatçı & Geliştirici</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-  <div class="starlight" id="starlight-container"></div>
-  <div class="ethereal-light"></div>
-  <div class="ethereal-light"></div>
-  <div class="leaf-particles" id="leaf-particles"></div>
+  <!-- arkaplan burada -->
+  <div class="luxury-background"></div>
   
-  <!-- Waterfalls -->
-  <div class="waterfall waterfall-left">
-    <div class="water-container">
-      <div class="water-stream"></div>
-      <div class="water-stream"></div>
-      <div class="water-stream"></div>
-      <div class="water-foam"></div>
-      <div class="water-mist"></div>
-    </div>
-  </div>
-  
-  <div class="waterfall waterfall-right">
-    <div class="water-container">
-      <div class="water-stream"></div>
-      <div class="water-stream"></div>
-      <div class="water-stream"></div>
-      <div class="water-foam"></div>
-      <div class="water-mist"></div>
-    </div>
+  <!-- Dekoratif Elementler -->
+  <div class="decorative-elements">
+    <div class="ornament top-left"></div>
+    <div class="ornament top-right"></div>
+    <div class="ornament bottom-left"></div>
+    <div class="ornament bottom-right"></div>
   </div>
 
-  <!-- Mountains Background -->
-  <div class="mountains-bg"></div>
-
-  <div class="grain"></div>
-
-  <div class="container">
-    <h1>Elif K</h1>
-    <p class="subtitle">~ Welcome to the Imladris ~</p>
-
-    <div class="moria-door">
-      <div class="door-frame">
-        <div class="door-inner">
-          <div class="rune-line">
-            <span class="elvish-rune">✦</span>
-            <span class="elvish-rune">✧</span>
-            <span class="elvish-rune">✦</span>
+  <!-- Ana İçerik -->
+  <main class="luxury-portfolio">
+    <!-- Hero Section -->
+    <section id="hero" class="luxury-hero">
+      <div class="hero-content">
+        <!-- Sol Taraf - İsim ve Sosyal Medya -->
+        <div class="name-display">
+          <!-- Profil Circle -->
+          <div class="profile-circle">
+            <div class="circle-outer">
+              <div class="circle-middle">
+                <div class="circle-inner">
+                  <img src="Assets/images/your-profile-image.jpeg" alt="Elif K" class="profile-image"> <!--Profil resmi burada-->
+                  <div class="profile-overlay">
+                    <i class="fas fa-feather-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="door-symbol">◆</div>
-          <div class="rune-line">
-            <span class="elvish-rune">✦</span>
-            <span class="elvish-rune">✧</span>
-            <span class="elvish-rune">✦</span>
+          
+          <!-- İsim ve Başlık -->
+          <div class="name-border">
+            <h1 class="elegant-title">Elif K.</h1>
+          </div>
+          <div class="title-divider">
+            <div class="divider-line"></div>
+            <div class="divider-diamond"></div>
+            <div class="divider-line"></div>
+          </div>
+          <p class="elegant-subtitle">Dijital Sanatçı & Yazılım Geliştirici</p>
+          
+          <!-- Sosyal Medya ve Linkler -->
+          <div class="social-links-main">
+            <a href="https://www.instagram.com/elifstech/" class="social-link-main" target="_blank">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://github.com/elifstech" class="social-link-main" target="_blank">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/elif-k%C3%B6m%C3%BCrc%C3%BC-b407b628a/" class="social-link-main" target="_blank">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://elifstech.github.io/stepomodoro/" class="social-link-main" target="_blank">
+              <i class="fas fa-hourglass-half"></i>
+              <span>Stepomodoro</span>
+            </a>
+            <a href="mailto:elif.komurcu@kun.edu.tr" class="social-link-main">
+              <i class="fas fa-envelope"></i>
+              <span>E-posta</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sağ Taraf - Bilgi Kartları -->
+        <div class="hero-info">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="card-content">
+              <h3>Yazılım Geliştirme</h3>
+              <p>Kapadokya Üniversitesi'nde öğrenci ve yazılım geliştirici</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="card-content">
+              <h3>Dijital Sanat</h3>
+              <p>Photoshop & Blender ile görsel hikayeler</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="card-content">
+              <h3>Oyun Tasarımı</h3>
+              <p>Unity ile interaktif deneyimler</p>
+            </div>
+          </div>
+
+          <!-- Müzik Kutusu -->
+          <div class="music-box">
+            <div class="music-header">
+              <i class="fas fa-music"></i>
+              <span>Ortaçağ Melodileri</span>
+            </div>
+            <div class="music-controls">
+              <button class="music-btn" id="playPause">
+                <i class="fas fa-play"></i>
+              </button>
+              <div class="music-info">
+                <div class="music-title">Ortaçağ Melodisi</div>
+                <div class="music-time">0:00 / 0:00</div>
+              </div>
+              <button class="music-btn" id="nextTrack">
+                <i class="fas fa-forward"></i>
+              </button>
+            </div>
+            <div class="volume-control">
+              <i class="fas fa-volume-down"></i>
+              <input type="range" id="volumeSlider" min="0" max="100" value="50">
+              <i class="fas fa-volume-up"></i>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="luxury-scroll">
+        <div class="scroll-text">Keşfet</div>
+        <div class="scroll-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="luxury-projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Projelerim</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="projects-showcase">
+          <!-- Featured Project -->
+          <div class="project-featured">
+            <div class="project-visual">
+              <div class="project-frame">
+                <img src="Assets/images/spell1.png" alt="Spell & Spaceship" class="project-image">
+                <div class="image-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="project-details">
+              <h3>Spell & Spaceship</h3>
+              <p>Kendi çizimlerimden ilham alarak Unity'de geliştirdiğim eğlenceli uzay macerası. Kolay oyun mekanikleri ve görsel tasarım.</p>
+              <div class="project-meta">
+                <span class="meta-tag">Unity</span>
+                <span class="meta-tag">C#</span>
+                <span class="meta-tag">2D Game</span>
+                <span class="meta-tag">Pixel Art</span>
+              </div>
+              <a href="spell-spaceship/index.html" class="luxury-btn" target="_blank">
+                <span>Oyunu Oyna</span>
+                <i class="fas fa-play"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mini Projects Grid -->
+          <div class="projects-grid">
+            <div class="project-mini">
+              <div class="mini-visual">
+                <img src="Assets/images/stepomodoro.png" alt="Stepomodoro" class="mini-image">
+                <div class="mini-overlay">
+                  <i class="fas fa-hourglass-half"></i>
+                </div>
+              </div>
+              <div class="mini-content">
+                <h4>Stepomodoro</h4>
+                <p>Zaman yönetimi ve productivity uygulaması</p>
+                <div class="mini-meta">
+                  <span class="mini-tag">JavaScript</span>
+                  <span class="mini-tag">CSS</span>
+                </div>
+                <a href="https://elifstech.github.io/stepomodoro/" class="mini-link" target="_blank">
+                  Kullan <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="luxury-about">
+      <div class="container">
+        <div class="about-elegant">
+          <div class="about-content">
+            <div class="about-header">
+              <h2 class="section-title">Yolculuğum</h2>
+              <div class="title-underline"></div>
+            </div>
+            
+            <div class="about-text">
+              <p>Kapadokya Üniversitesi'nde Yazılım Geliştirme öğrencisiyim. Hem teknik hem de sanatsal becerilerimi birleştirerek dijital dünyalarda yeni deneyimler yaratıyorum.</p>
+              
+              <p>Unity ile oyun geliştirme, Photoshop ve Blender ile dijital sanat benim için sadece birer araç değil, hayal gücümü somutlaştırma yolları. Her projemde teknik mükemmellik ve sanatsal ifadeyi bir araya getirmeye çalışıyorum.</p>
+              
+              <p>Boş zamanlarımda piyano çalarak müziğin ritmini, kod yazarak mantığın dansını keşfediyorum. Tasarım, teknoloji ve sanatın kesişiminde sürekli yeni ufuklar arıyorum.</p>
+            </div>
+
+            <div class="skills-elegant">
+              <div class="skill-category">
+                <h4>Teknik Beceriler</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Unity</span>
+                  <span class="skill-tag">C#</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">HTML/CSS</span>
+                  
+                </div>
+              </div>
+              
+              <div class="skill-category">
+                <h4>Sanatsal Beceriler</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Photoshop</span>
+                  <span class="skill-tag">Blender</span>
+                  <span class="skill-tag">Digital Art</span>
+                  <span class="skill-tag">UI/UX</span>
+                  <span class="skill-tag">3D Modeling</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-elegant">
+            <div class="contact-card">
+              <h3>İletişim</h3>
+              <div class="contact-links">
+                <a href="mailto:elif.komurcu@kun.edu.tr" class="contact-link">
+                  <i class="fas fa-envelope"></i>
+                  <span>elif.komurcu@kun.edu.tr</span>
+                </a>
+                <a href="https://www.instagram.com/elifstech/" class="contact-link" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                  <span>@elifstech</span>
+                </a>
+                <a href="https://github.com/elifstech" class="contact-link" target="_blank">
+                  <i class="fab fa-github"></i>
+                  <span>github.com/elifstech</span>
+                </a>
+                <a href="https://www.linkedin.com/in/elif-k%C3%B6m%C3%BCrc%C3%BC-b407b628a/" class="contact-link" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://elifstech.github.io/stepomodoro/" class="contact-link" target="_blank">
+                  <i class="fas fa-hourglass-half"></i>
+                  <span>Stepomodoro</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="luxury-footer">
+    <div class="container">
+      <p>&copy; 2025 Elif Komurcu. Tüm hakları saklıdır.</p>
     </div>
+  </footer>
 
-    <button class="btn" id="enterBtn">Enter the Valley</button>
-  </div>
-
-  <script>
-    // Stars
-    const starlightContainer = document.getElementById('starlight-container');
-    for (let i = 0; i < 30; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-      star.style.animationDelay = Math.random() * 4 + 's';
-      starlightContainer.appendChild(star);
-    }
-
-    // Leaves
-    const leafContainer = document.getElementById('leaf-particles');
-    const leafSymbols = ['🍃', '🌿', '🍂'];
-    for (let i = 0; i < 30; i++) {
-      const leaf = document.createElement('div');
-      leaf.className = 'leaf';
-      leaf.textContent = leafSymbols[Math.floor(Math.random() * leafSymbols.length)];
-      leaf.style.left = Math.random() * 100 + '%';
-      leaf.style.animationDuration = (Math.random() * 15 + 20) + 's';
-      leaf.style.animationDelay = Math.random() * 10 + 's';
-      leafContainer.appendChild(leaf);
-    }
-
-    sessionStorage.setItem('fromIndex', 'true');
-    
-    const btn = document.getElementById('enterBtn');
-    btn.addEventListener('click', () => {
-      sessionStorage.setItem('entered', 'true');
-      document.body.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = 'main.html';
-      }, 1000);
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
